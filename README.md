@@ -49,4 +49,8 @@ index ef2819b..0000000
 \ No newline at end of file
 ```
 
+Get git info
+```
+ git show --format="%H\t%h\t%P\t%an\t%ae\t%aD\t%cn\t%ce\t%cD" -s 616ca5e
+```
 
