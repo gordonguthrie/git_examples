@@ -28,7 +28,7 @@ eaad691 (tag: V_branchless) HEAD@{4}: commit: delete file
 Examine a particular commit by short name:
 
 ```
- git show --pretty=fuller eaad691
+git show --pretty=fuller eaad691
 
  commit eaad691e79a835716ed7f233b58b89421b52fbc7 (tag: V_branchless)
 Author:     Gordon Guthrie <gordon@hypernumbers.com>
@@ -51,6 +51,17 @@ index ef2819b..0000000
 
 Get git info
 ```
- git show --format="%H\t%h\t%P\t%an\t%ae\t%aD\t%cn\t%ce\t%cD" -s 616ca5e
+git show --format="%H\t%h\t[%P]\t%an\t%ae\t%aD\t%cn\t%ce\t%cD" -s 616ca5e
 ```
 
+Sum user contributions:
+
+```
+git log --author="gordonguthrie" --format=tformat: --numstat | q -t "select sum(c1), sum(c2) from -"
+```
+
+get stats:
+
+```
+git log --pretty=tformat=%H\t%h\t[%P]\t%an\t%ae\t%aD\t%cn\t%ce\t%cD\t%s -s 3516151c6f712cb7742b171ebfd576bae17b78f8
+```
